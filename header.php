@@ -19,7 +19,6 @@
     <!-- Theme Style -->
     <link rel="stylesheet" href="<?php bloginfo('template_url');?>/css/style.css">
     <link rel="stylesheet" href="<?php bloginfo('template_url');?>/css/boxStyle.css">
-    <? wp_header() ?>
 </head>
 
 <body>

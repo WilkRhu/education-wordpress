@@ -1221,6 +1221,12 @@ textarea.form-control {
 #accordion .card .card-body {
   padding-top: 15px;
 }
+#meta {
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: .1em;
+  color: #ccc;
+}
 
 .testimonial {
   font-size: 30px;

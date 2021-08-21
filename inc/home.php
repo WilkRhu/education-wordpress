@@ -4,9 +4,9 @@
                 <div class="col-md-8 text-center">
 
                     <div class="mb-5 element-animate">
-                        <h1 style="font-size: 3em;">Aprendizado Continuo</h1>
-                        <p class="lead">Projeto Educacional Municipal.</p>
-                        <p><a href="#" class="btn btn-primary">Saiba Mais</a></p>
+                        <h1 style="font-size: 3em;">NUPRE</h1>
+                        <p class="lead">Núcleo de Práticas Restaurativas na Escola.</p>
+                        <!-- <p><a href="#" class="btn btn-primary">Saiba Mais</a></p> -->
                     </div>
                 </div>
             </div>
@@ -90,7 +90,13 @@
                             ?>
                                 <div class="card-body" style="overflow-y: auto">
                                     <h4 class="card-title"><?php the_title(); ?></h4>
-                                    <p class="card-text"><?php the_excerpt(300); ?></p>
+                                    <p class="card-text"><?php new_length_excerpt(the_excerpt()); ?></p>
+                                        <?php
+                                            $postId = get_the_id(); 
+                                            $data = get_postdata($postId);  
+                                            $datePost = new DateTime($data['Date']);
+                                            echo '<div id="meta"> Postado em: '. $datePost->format("d M Y"). '</div>';
+                                        ?>
                                 </div>
                                 <div class="card-footer" style="background: inherit; border-color: inherit;">
                                     <a href="<?php the_permalink(); ?>" class="btn btn-primary">Ver Mais</a>
@@ -138,7 +144,6 @@
                     <p>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate eius vel similique? Modi debitis nulla ullam, accusantium, maiores fuga iste architecto dolor eum suscipit fugiat beatae rem fugit dignissimos dolorum?
                         Ipsum dolores aperiam minus voluptate ducimus eveniet incidunt officiis soluta ipsa reprehenderit repellendus magni at amet praesentium unde, dignissimos cumque, suscipit autem animi, ea ullam adipisci est recusandae sequi! Distinctio.
-                        Numquam cupiditate quis doloremque nam eligendi! Veritatis vel atque nisi dolorum natus ducimus eius, quos et temporibus animi in odit doloribus quis aut quasi blanditiis? Temporibus nemo minus nulla laborum?
                     </p>
                 </div>
                 <div class="col-lg-1 order-lg-2"></div>
@@ -180,7 +185,7 @@
                 <div class="col-md-12">
                     <div class="col-md-4 space"> </div>
                     <div class="col-md-4 space">
-                        <a href="#" class="btn btn-primary">Saiba Mais</a>
+                        <a href="<?php $siteUrl = get_site_url(); echo $siteUrl . '/?page_id=47'?>" class="btn btn-primary">Saiba Mais</a>
                     </div>
                     <div class="col-md-4 space"></div>
                 </div>

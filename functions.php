@@ -339,6 +339,32 @@ function add_menu_link_class( $atts, $item, $args ) {
   add_filter( 'nav_menu_link_attributes', 'add_menu_link_class', 1, 3 );
 
 
-  /***** Form Comments ****/
+  /***** Excerpt ****/
 
-  
+  function new_length_excerpt($length) {
+	return 30;
+}
+
+add_filter('excerpt_length', 'new_length_excerpt');
+
+
+/** Post Types Page Videos */
+function videos(){
+    //Estrutura
+
+    register_post_type('videos',
+        array(
+            'labels' => array(
+                'name' => __('Inclusão de Videos'),
+                'singular_name' => __('videos')
+            ),
+
+            'public'      => true,
+            'has_archive' => true,
+            'menu_icon'   => 'dashicons-video-alt3',
+            'supports'     => array('title', 'page-attributes', 'tags',),
+            'rewrite' => true,
+
+        )
+    );
+}
