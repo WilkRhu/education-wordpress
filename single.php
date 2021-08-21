@@ -18,8 +18,15 @@ Description:
         <div class="row align-items-center site-hero-inner justify-content-center">
           <div class="col-md-8 text-center">
             <div class="mb-5 element-animate">
-              <h1 class="mb-3"><?php the_title()?>r</h1>
-              <p class="post-meta">January 2, 2018 &bull; Posted by <a href="#">Joh Doe</a> in <a href="#">Events</a></p>
+              <h1 class="mb-3"><?php the_title()?></h1>
+              <p class="post-meta">
+                <?php
+                   $postId = get_the_id(); 
+                   $data = get_postdata($postId);  
+                   $datePost = new DateTime($data['Date'])
+                ?>
+                <?php echo $datePost->format('M')?> <?php echo $datePost->format('d') ?>, <?php echo $datePost->format('Y') ?> &bull; Postado por <?php the_author() ?>
+              </p>
             </div>
           </div>
         </div>
